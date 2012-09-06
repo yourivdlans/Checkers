@@ -1,0 +1,239 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DAD71E7015F8D77B00F0369E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD71E6F15F8D77B00F0369E /* Foundation.framework */; };
+		DAD71E7315F8D77B00F0369E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD71E7215F8D77B00F0369E /* main.m */; };
+		DAD71E7715F8D77B00F0369E /* Checkers.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = DAD71E7615F8D77B00F0369E /* Checkers.1 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DAD71E6915F8D77B00F0369E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				DAD71E7715F8D77B00F0369E /* Checkers.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DAD71E6B15F8D77B00F0369E /* Checkers */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Checkers; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAD71E6F15F8D77B00F0369E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DAD71E7215F8D77B00F0369E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DAD71E7515F8D77B00F0369E /* Checkers-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Checkers-Prefix.pch"; sourceTree = "<group>"; };
+		DAD71E7615F8D77B00F0369E /* Checkers.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Checkers.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DAD71E6815F8D77B00F0369E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAD71E7015F8D77B00F0369E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DAD71E6015F8D77B00F0369E = {
+			isa = PBXGroup;
+			children = (
+				DAD71E7115F8D77B00F0369E /* Checkers */,
+				DAD71E6E15F8D77B00F0369E /* Frameworks */,
+				DAD71E6C15F8D77B00F0369E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DAD71E6C15F8D77B00F0369E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DAD71E6B15F8D77B00F0369E /* Checkers */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DAD71E6E15F8D77B00F0369E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DAD71E6F15F8D77B00F0369E /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DAD71E7115F8D77B00F0369E /* Checkers */ = {
+			isa = PBXGroup;
+			children = (
+				DAD71E7215F8D77B00F0369E /* main.m */,
+				DAD71E7615F8D77B00F0369E /* Checkers.1 */,
+				DAD71E7415F8D77B00F0369E /* Supporting Files */,
+			);
+			path = Checkers;
+			sourceTree = "<group>";
+		};
+		DAD71E7415F8D77B00F0369E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DAD71E7515F8D77B00F0369E /* Checkers-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DAD71E6A15F8D77B00F0369E /* Checkers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAD71E7A15F8D77B00F0369E /* Build configuration list for PBXNativeTarget "Checkers" */;
+			buildPhases = (
+				DAD71E6715F8D77B00F0369E /* Sources */,
+				DAD71E6815F8D77B00F0369E /* Frameworks */,
+				DAD71E6915F8D77B00F0369E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Checkers;
+			productName = Checkers;
+			productReference = DAD71E6B15F8D77B00F0369E /* Checkers */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DAD71E6215F8D77B00F0369E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Youri van der Lans";
+			};
+			buildConfigurationList = DAD71E6515F8D77B00F0369E /* Build configuration list for PBXProject "Checkers" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DAD71E6015F8D77B00F0369E;
+			productRefGroup = DAD71E6C15F8D77B00F0369E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DAD71E6A15F8D77B00F0369E /* Checkers */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DAD71E6715F8D77B00F0369E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAD71E7315F8D77B00F0369E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		DAD71E7815F8D77B00F0369E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DAD71E7915F8D77B00F0369E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DAD71E7B15F8D77B00F0369E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Checkers/Checkers-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DAD71E7C15F8D77B00F0369E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Checkers/Checkers-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DAD71E6515F8D77B00F0369E /* Build configuration list for PBXProject "Checkers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAD71E7815F8D77B00F0369E /* Debug */,
+				DAD71E7915F8D77B00F0369E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAD71E7A15F8D77B00F0369E /* Build configuration list for PBXNativeTarget "Checkers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAD71E7B15F8D77B00F0369E /* Debug */,
+				DAD71E7C15F8D77B00F0369E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DAD71E6215F8D77B00F0369E /* Project object */;
+}

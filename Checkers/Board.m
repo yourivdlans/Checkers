@@ -7,7 +7,23 @@
 //
 
 #import "Board.h"
+#import "BoardData.h"
 
 @implementation Board
+
+- (id) initWithSize:(int)theSize {
+    self = [super init];
+    
+    if (self) {
+        size = theSize;
+        BoardData *boarddata = [[BoardData alloc] initWithSize:theSize];
+    }
+    
+    return self;
+}
+
+- (id) init {
+    return [self initWithSize:8];
+}
 
 @end

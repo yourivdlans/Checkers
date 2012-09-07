@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA0C7E1E15FA37C400E3C216 /* BoardData.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0C7E1D15FA37C400E3C216 /* BoardData.m */; };
+		DA0C7E2215FA38B000E3C216 /* Move.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0C7E2115FA38B000E3C216 /* Move.m */; };
+		DA0C7E2515FA422800E3C216 /* Piece.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0C7E2415FA422800E3C216 /* Piece.m */; };
 		DAD71E7015F8D77B00F0369E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD71E6F15F8D77B00F0369E /* Foundation.framework */; };
 		DAD71E7315F8D77B00F0369E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD71E7215F8D77B00F0369E /* main.m */; };
 		DAD71E7715F8D77B00F0369E /* Checkers.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = DAD71E7615F8D77B00F0369E /* Checkers.1 */; };
@@ -27,6 +30,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DA0C7E1C15FA37C400E3C216 /* BoardData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardData.h; sourceTree = "<group>"; };
+		DA0C7E1D15FA37C400E3C216 /* BoardData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardData.m; sourceTree = "<group>"; };
+		DA0C7E2015FA38B000E3C216 /* Move.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Move.h; sourceTree = "<group>"; };
+		DA0C7E2115FA38B000E3C216 /* Move.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Move.m; sourceTree = "<group>"; };
+		DA0C7E2315FA422800E3C216 /* Piece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Piece.h; sourceTree = "<group>"; };
+		DA0C7E2415FA422800E3C216 /* Piece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Piece.m; sourceTree = "<group>"; };
 		DAD71E6B15F8D77B00F0369E /* Checkers */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Checkers; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAD71E6F15F8D77B00F0369E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DAD71E7215F8D77B00F0369E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -81,6 +90,12 @@
 				DAD71E7415F8D77B00F0369E /* Supporting Files */,
 				DAD7FE9D15F8E9F500FF76B7 /* Board.h */,
 				DAD7FE9E15F8E9F500FF76B7 /* Board.m */,
+				DA0C7E1C15FA37C400E3C216 /* BoardData.h */,
+				DA0C7E1D15FA37C400E3C216 /* BoardData.m */,
+				DA0C7E2015FA38B000E3C216 /* Move.h */,
+				DA0C7E2115FA38B000E3C216 /* Move.m */,
+				DA0C7E2315FA422800E3C216 /* Piece.h */,
+				DA0C7E2415FA422800E3C216 /* Piece.m */,
 			);
 			path = Checkers;
 			sourceTree = "<group>";
@@ -146,6 +161,9 @@
 			files = (
 				DAD71E7315F8D77B00F0369E /* main.m in Sources */,
 				DAD7FE9F15F8E9F500FF76B7 /* Board.m in Sources */,
+				DA0C7E1E15FA37C400E3C216 /* BoardData.m in Sources */,
+				DA0C7E2215FA38B000E3C216 /* Move.m in Sources */,
+				DA0C7E2515FA422800E3C216 /* Piece.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

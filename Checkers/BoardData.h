@@ -8,17 +8,28 @@
 
 #import <Foundation/Foundation.h>
 #import "Move.h"
+#import "Piece.h"
 
 @interface BoardData : NSObject {
+    NSMutableArray *board;
+    NSMutableArray *moves;
     int size;
     int row;
     int col;
+    int currentPlayer, opponent;
+    NSUInteger currentRow, currentCol;
 }
 
 - (id) initWithSize: (int) size;
-- (void) setupBoard: (int) size;
+- (void) setupBoard;
 - (void) makeMove: (Move *) move;
-- (Move *) getValidMoves: (int) player;
-- (Move *) getValidJumps: (int) player;
+- (void) setValidMoves;
+- (void) setValidJumps;
+- (Piece *) getPieceForRow: (NSUInteger) row AndCol: (NSUInteger) col;
+- (int) opponent;
+
+@property NSMutableArray *board;
+@property NSMutableArray *moves;
+@property int currentPlayer;
 
 @end

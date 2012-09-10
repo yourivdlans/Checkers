@@ -11,5 +11,7 @@
 @interface Board : NSObject {
     int size;
 }
+
 - (id) initWithSize: (int) size;
+
 @end

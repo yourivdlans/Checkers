@@ -8,6 +8,7 @@
 
 #import "Board.h"
 #import "BoardData.h"
+#import "Piece.h"
 
 @implementation Board
 
@@ -17,6 +18,12 @@
     if (self) {
         size = theSize;
         BoardData *boarddata = [[BoardData alloc] initWithSize:theSize];
+        NSMutableArray *row = [[NSMutableArray alloc] init];
+        row = [[boarddata board] objectAtIndex: (int) 0];
+        Piece *piece = [row objectAtIndex:(int) 0];
+        
+        NSLog(@"%i", [piece type]);
+        NSLog(@"%i", [piece player]);
     }
     
     return self;

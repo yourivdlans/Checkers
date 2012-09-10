@@ -16,11 +16,14 @@ static int BLACK_DOUBLE = 4;
 
 @implementation Piece
 
+@synthesize type, player;
+
 - (id) initWithType:(int)theType {
     self = [super init];
     
     if (self) {
         type = theType;
+        [self setPlayerForPiece];
     }
     
     return self;
@@ -28,6 +31,16 @@ static int BLACK_DOUBLE = 4;
 
 - (id) init {
     return [self initWithType:0];
+}
+
+- (void) setPlayerForPiece {
+    if ( type == 1 || type == 2 ) {
+        player = 1;
+    } else if ( type == 3 || type == 4 ) {
+        player = 2;
+    } else {
+        player = 0;
+    }
 }
 
 @end

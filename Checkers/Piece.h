@@ -10,7 +10,13 @@
 
 @interface Piece : NSObject {
     int type;
+    int player;
 }
+
 - (id) initWithType: (int) type;
-@property (assign) int type;
+- (void) setPlayerForPiece;
+
+@property int type;
+@property int player;
+
 @end

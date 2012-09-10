@@ -10,7 +10,7 @@
 
 @implementation Move
 
-- (id) initWithFromRow:(int)theFromRow AndFromCol:(int)theFromCol AndToRow:(int)theToRow AndToCol:(int)theToCol {
+- (id) initWithFromRow:(NSUInteger)theFromRow AndFromCol:(NSUInteger)theFromCol AndToRow:(NSUInteger)theToRow AndToCol:(NSUInteger)theToCol {
     self = [super init];
     
     if ( self ) {

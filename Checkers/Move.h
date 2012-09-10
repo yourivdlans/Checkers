@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface Move : NSObject {
-    int fromRow;
-    int fromCol;
-    int toRow;
-    int toCol;
+    NSUInteger fromRow;
+    NSUInteger fromCol;
+    NSUInteger toRow;
+    NSUInteger toCol;
 }
 
-- (id) initWithFromRow: (int) fromRow AndFromCol: (int) fromCol AndToRow: (int) toRow AndToCol: (int) toCol;
+- (id) initWithFromRow: (NSUInteger) fromRow AndFromCol: (NSUInteger) fromCol AndToRow: (NSUInteger) toRow AndToCol: (NSUInteger) toCol;
 
 @end

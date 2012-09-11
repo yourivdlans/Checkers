@@ -51,26 +51,37 @@
         [board addObject:curRow];
     }
     
-    [self setValidMoves];
+    [self setMoves];
 }
 
 - (void) makeMove:(Move *)move {
     
 }
 
-- (void) setValidMoves {
+- (void) setMoves {
     moves = [[NSMutableArray alloc] init];
     
     [self setValidJumps];
     
+    NSLog(@"%li jumps possible", [moves count]);
+    
+    // Only set valid moves when there are no jumps to be made
+    if ( [moves count] > 0 ) {
+        [self setValidMoves];
+    }
+}
+
+- (void) setValidMoves {
     
 }
 
 - (void) setValidJumps {
     NSUInteger sizeMinusTwo = size - (NSUInteger) 2;
     
+    // Loop through rows
     for ( NSMutableArray *boardRow in board ) {
         currentRow = [board indexOfObject:boardRow];
+        // Loop through cols
         for ( Piece *piece in boardRow ) {
             currentCol = [boardRow indexOfObject:piece];
             NSLog(@"row: %li, col: %li, player: %i", currentRow, currentCol, [piece player]);
@@ -85,67 +96,78 @@
             NSUInteger currentRowPlusTwo = currentRow + (NSUInteger) 2;
             NSUInteger currentColPlusTwo = currentCol + (NSUInteger) 2;
             
-            NSUInteger currentRowMinusOne = currentRow - (NSUInteger) 1;
-            NSUInteger currentColMinusOne = currentCol - (NSUInteger) 1;
-            NSUInteger currentRowPlusOne = currentRow + (NSUInteger) 1;
-            NSUInteger currentColPlusOne = currentCol + (NSUInteger) 1;
-            
             // Continue when current piece is two blocks away for the edge
             if ( currentRow >= 2 && currentCol >= 2 ) {
-                Piece *northWest = [self getPieceForRow:currentRowMinusTwo AndCol:currentColMinusTwo];
+                Move *move = [[Move alloc] initWithFromRow:currentRow AndFromCol:currentCol AndToRow:currentRowMinusTwo AndToCol:currentColMinusTwo];
                 
-                // Continue when block is empty
-                if ( [northWest player] == 0 ) {
-                    Piece *connectingNorthWestPiece = [self getPieceForRow:currentRowMinusOne AndCol:currentColMinusOne];
-                    
-                    // Add move object when connecting piece belongs to the opponent
-                    if ( [connectingNorthWestPiece player] == [self opponent] ) {
-                        [moves addObject:[[Move alloc] initWithFromRow:currentRow AndFromCol:currentCol AndToRow:currentRowMinusTwo AndToCol:currentColMinusTwo]];
-                    }
+                if ( [self isValidJump:move] == true ) {
+                    [moves addObject:move];
                 }
             }
             if ( currentRow >= 2 && currentCol <= sizeMinusTwo ) {
-                Piece *northEast = [self getPieceForRow:currentRowMinusTwo AndCol:currentColPlusTwo];
+                Move *move = [[Move alloc] initWithFromRow:currentRow AndFromCol:currentCol AndToRow:currentRowMinusTwo AndToCol:currentColPlusTwo];
                 
-                if ( [northEast player] == 0 ) {
-                    Piece *connectingNorthEastPiece = [self getPieceForRow:currentRowMinusOne AndCol:currentColPlusOne];
-                    
-                    if ( [connectingNorthEastPiece player] == [self opponent] ) {
-                        [moves addObject:[[Move alloc] initWithFromRow:currentRow AndFromCol:currentCol AndToRow:currentRowMinusTwo AndToCol:currentColPlusTwo]];
-                    }
+                if ( [self isValidJump:move] == true ) {
+                    [moves addObject:move];
                 }
             }
             if ( currentRow <= sizeMinusTwo && currentCol <= sizeMinusTwo ) {
-                Piece *southEast = [self getPieceForRow:currentRowPlusTwo AndCol:currentColPlusTwo];
+                Move *move = [[Move alloc] initWithFromRow:currentRow AndFromCol:currentCol AndToRow:currentRowPlusTwo AndToCol:currentColPlusTwo];
                 
-                if ( [southEast player] == 0 ) {
-                    Piece *connectingSouthEastPiece = [self getPieceForRow:currentRowPlusOne AndCol:currentColPlusOne];
-                    
-                    if ( [connectingSouthEastPiece player] == [self opponent] ) {
-                        [moves addObject:[[Move alloc] initWithFromRow:currentRow AndFromCol:currentCol AndToRow:currentRowPlusTwo AndToCol:currentRowPlusTwo]];
-                    }
+                if ( [self isValidJump:move] == true ) {
+                    [moves addObject:move];
                 }
             }
             if ( currentRow <= sizeMinusTwo && currentCol >= 2 ) {
-                Piece *southWest = [self getPieceForRow:currentRowPlusTwo AndCol:currentColMinusTwo];
+                Move *move = [[Move alloc] initWithFromRow:currentRow AndFromCol:currentCol AndToRow:currentRowPlusTwo AndToCol:currentColMinusTwo];
                 
-                if ( [southWest player] == 0 ) {
-                    Piece *connectingSouthWestPiece = [self getPieceForRow:currentRowPlusOne AndCol:currentColMinusOne];
-                    
-                    if ( [connectingSouthWestPiece player] == [self opponent] ) {
-                        [moves addObject:[[Move alloc] initWithFromRow:currentRow AndFromCol:currentCol AndToRow:currentRowPlusTwo AndToCol:currentColMinusTwo]];
-                    }
+                if ( [self isValidJump:move] == true ) {
+                    [moves addObject:move];
                 }
             }
         }
     }
 }
 
-- (Piece *)getPieceForRow:(NSUInteger)boardRow AndCol:(NSUInteger)boardCol {
+- (bool) isValidJump:(Move *)move {
+    Piece *piece = [self getPieceForRow:[move toRow] AndCol:[move toCol]];
+    
+    // Return false when block is not empty
+    if ( [piece player] != 0 ) {
+        return false;
+    }
+    
+    // Player two can only jump down with a regular piece
+    if ( currentPlayer == 2 ) {
+        if ( [piece player] == 2 && [move toRow] < [move fromRow] && [piece isDouble] == false ) {
+            return false;
+        }
+    }
+    // Player one can only jump up with a regular piece
+    if ( currentPlayer == 1 ) {
+        if ( [piece player] == 1 && [move toRow] > [move fromRow] && [piece isDouble] == false ) {
+            return false;
+        }
+    }
+    
+    NSUInteger betweenRow = ( [move fromRow] + [move toRow] ) / 2;
+    NSUInteger betweenCol = ( [move fromCol] + [move toCol] ) / 2;
+    
+    Piece *connectingPiece = [self getPieceForRow:betweenRow AndCol:betweenCol];
+    
+    // Jump can only occur when the connecting piece belongs to the opponent
+    if ( [connectingPiece player] != [self opponent] ) {
+        return false;
+    }
+    
+    return true;
+}
+
+- (Piece *) getPieceForRow:(NSUInteger)boardRow AndCol:(NSUInteger)boardCol {
     return [[board objectAtIndex: boardRow] objectAtIndex: boardCol];
 }
 
-- (int)opponent {
+- (int) opponent {
     if ( currentPlayer == 1 ) {
         opponent = 2;
     } else {

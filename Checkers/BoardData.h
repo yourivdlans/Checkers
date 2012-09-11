@@ -23,9 +23,11 @@
 - (id) initWithSize: (int) size;
 - (void) setupBoard;
 - (void) makeMove: (Move *) move;
+- (void) setMoves;
 - (void) setValidMoves;
 - (void) setValidJumps;
 - (Piece *) getPieceForRow: (NSUInteger) row AndCol: (NSUInteger) col;
+- (bool) isValidJump: (Move *) move;
 - (int) opponent;
 
 @property NSMutableArray *board;

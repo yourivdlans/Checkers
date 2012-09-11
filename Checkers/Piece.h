@@ -11,12 +11,13 @@
 @interface Piece : NSObject {
     int type;
     int player;
+    bool result;
 }
 
 - (id) initWithType: (int) type;
-- (void) setPlayerForPiece;
+- (int) player;
+- (bool) isDouble;
 
 @property int type;
-@property int player;
 
 @end

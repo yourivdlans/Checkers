@@ -16,31 +16,42 @@ static int BLACK_DOUBLE = 4;
 
 @implementation Piece
 
-@synthesize type, player;
+@synthesize type;
 
 - (id) initWithType:(int)theType {
     self = [super init];
     
     if (self) {
         type = theType;
-        [self setPlayerForPiece];
     }
     
     return self;
 }
 
 - (id) init {
-    return [self initWithType:0];
+    return [self initWithType:EMPTY];
 }
 
-- (void) setPlayerForPiece {
-    if ( type == 1 || type == 2 ) {
+- (int) player {
+    player = 0;
+    
+    if ( type == WHITE || type == WHITE_DOUBLE ) {
         player = 1;
-    } else if ( type == 3 || type == 4 ) {
+    } else if ( type == BLACK || type == BLACK_DOUBLE ) {
         player = 2;
-    } else {
-        player = 0;
     }
+    
+    return player;
+}
+
+- (bool) isDouble {
+    result = false;
+    
+    if ( type == WHITE_DOUBLE || type == BLACK_DOUBLE ) {
+        result = true;
+    }
+    
+    return result;
 }
 
 @end
